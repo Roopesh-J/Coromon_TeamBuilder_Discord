@@ -1,0 +1,356 @@
+{
+    "Amplified": {
+        "id": 1,
+        "Type": "Passive",
+        "Description": "Super Effective Attacks deal 25% extra damage.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Lumon"
+        ]
+    },
+    "Antidote": {
+        "id": 2,
+        "Type": "Active",
+        "Description": "The Coromon builds up an antidote over time which can cure Squad members from poison.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Swurmy"
+        ]
+    },
+    "Brave": {
+        "id": 3,
+        "Type": "Passive",
+        "Description": "This coromon is so brave that it can not be affected by curse.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Houndos"
+        ]
+    },
+    "Bright Light": {
+        "id": 4,
+        "Type": "Passive",
+        "Description": "The Coromon emanates a bright light, blocking Twilight and lighting up caves.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Lumon"
+        ]
+    },
+    "Caffeinated": {
+        "id": 5,
+        "Type": "Passive",
+        "Description": "The Coromon has more SP available.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Frova"
+        ]
+    },
+    "Clean Retreat": {
+        "id": 6,
+        "Type": "Passive",
+        "Description": "The Coromon is cured of all status problems when returned to its Spinner.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Frova",
+            "Otogy"
+        ]
+    },
+    "Clumsy Power": {
+        "id": 7,
+        "Type": "Passive",
+        "Description": "Increase the Power of its attacks by 25%, but reduce accuracy by 10%.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Cubzero"
+        ]
+    },
+    "Comeback": {
+        "id": 8,
+        "Type": "Passive",
+        "Description": "When its HP drops below 25%, the Coromon makes a comeback, increasing its attack.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Mino"
+        ]
+    },
+    "Conductor": {
+        "id": 9,
+        "Type": "Passive",
+        "Description": "The coromon charges when hit by an Electric attack, increasing its Speed.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Patterbit",
+            "Lumon"
+        ]
+    },
+    "Coward": {
+        "id": 10,
+        "Type": "Passive",
+        "Description": "When the Coromon receives a critical hit, it cowers and increases its Defense 2 stages.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Houndos"
+        ]
+    },
+    "Dark Atmosphere": {
+        "id": 11,
+        "Type": "Passive",
+        "Description": "The Coromon starts twilight upon entering a battle.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Lunarpup"
+        ]
+    },
+    "Escapist": {
+        "id": 12,
+        "Type": "Passive",
+        "Description": "This Coromon never fails to escape from a wild Coromon.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Silquill",
+            "Moffel"
+        ]
+    },
+    "Fully Rested": {
+        "id": 13,
+        "Type": "Passive",
+        "Description": "When the Coromon has full HP, any damage is reduced by 40%.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Nibblegar",
+            "Fiddly",
+            "Otogy"
+        ]
+    },
+    "Good Aim": {
+        "id": 14,
+        "Type": "Passive",
+        "Description": "Physical skills hit the right spot, increasing critical hit damage by 50%.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Slitherpin",
+            "Buzzlet"
+        ]
+    },
+    "Gravity Pull": {
+        "id": 15,
+        "Type": "Passive",
+        "Description": "This Coromon has such a big mass that it has (a) 25% chance to prevent opponents from switching out or fleeing.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Lunarpup"
+        ]
+    },
+    "Hoarder": {
+        "id": 16,
+        "Type": "Passive",
+        "Description": "The Coromon sometimes hoards items it finds lying around the battlefield.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Armado"
+        ]
+    },
+    "Inner Fire": {
+        "id": 17,
+        "Type": "Passive",
+        "Description": "The Coromon has an inner fire burning so hot, that it cannot be frozen.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Swurmy"
+        ]
+    },
+    "Lucky": {
+        "id": 18,
+        "Type": "Passive",
+        "Description": "This Coromon is so lucky that it has an increased chance to critical hit.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Moffel"
+        ]
+    },
+    "Magnetic": {
+        "id": 19,
+        "Type": "Passive",
+        "Description": "When a Spinner fails to catch a wild Coromon, this Coromon tries to pull back the Spinner to the trainer with a 50% chance of success.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Gauslime"
+        ]
+    },
+    "Menacing": {
+        "id": 20,
+        "Type": "Passive",
+        "Description": "The Coromon intimidate is opponent, lowering it Attack. Outside of battle it has a chance to repel wild Coromon which are much weaker.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Houndos",
+            "Sanscale",
+            "Lunarpup"
+        ]
+    },
+    "Molter": {
+        "id": 21,
+        "Type": "Passive",
+        "Description": "The Coromon sheds its skin after each round, giving it 30% chance to cure status problems.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Slitherpin"
+        ]
+    },
+    "Motivated": {
+        "id": 22,
+        "Type": "Passive",
+        "Description": "Upon defeating the opponent, the Coromon gets motivated and raises its Attack and Sp. Attack.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Mino"
+        ]
+    },
+    "Overclocker": {
+        "id": 23,
+        "Type": "Passive",
+        "Description": "If the opponent has higher Attack, the Coromon overclocks its own Attack to match it.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Patterbit"
+        ]
+    },
+    "Robber": {
+        "id": 24,
+        "Type": "Passive",
+        "Description": "The spoils go to the victor. Steal some extra gold when defeating an opponent.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Silquill",
+            "Patterbit"
+        ]
+    },
+    "Sharp Claws": {
+        "id": 25,
+        "Type": "Passive",
+        "Description": "Its claws are so sharp that lowering its Attack is impossible.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Cubzero"
+        ]
+    },
+    "Slippery": {
+        "id": 26,
+        "Type": "Passive",
+        "Description": "This slippery Coromon has an increased chance to dodge status changing moves.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Swurmy"
+        ]
+    },
+    "Static Body": {
+        "id": 27,
+        "Type": "Passive",
+        "Description": "Because of its static body, attackers making contact have a chance to get shocked.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Buzzlet"
+        ]
+    },
+    "Sticky Layer": {
+        "id": 28,
+        "Type": "Passive",
+        "Description": "The sticky layer of the Coromon lowers the Speed of an attacker making contact.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Gauslime"
+        ]
+    },
+    "Stinky": {
+        "id": 29,
+        "Type": "Passive",
+        "Description": "The Coromon's stinky scent has a 20% chance to make the opponent",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "hazy",
+            ". Outside of battle it has a chance to repel wild Coromon.",
+            "Gauslime"
+        ]
+    },
+    "Strategist": {
+        "id": 30,
+        "Type": "Passive",
+        "Description": "When the Coromon moves later than its target, it strategically finds weak spots and attacks with double Crit chance.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Swurmy"
+        ]
+    },
+    "Supersensory": {
+        "id": 31,
+        "Type": "Passive",
+        "Description": "The Coromon raises its most proficient stat when one of its stats is lowered.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Nibblegar"
+        ]
+    },
+    "Thick Skin": {
+        "id": 32,
+        "Type": "Passive",
+        "Description": "Its thick skin makes the Coromon immune to critical hits.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Toruga",
+            "Armado",
+            "Sanscale",
+            "Shimshell"
+        ]
+    },
+    "Vaccinated": {
+        "id": 33,
+        "Type": "Passive",
+        "Description": "The Coromon is vaccinated, which makes it immune to poison.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Armado"
+        ]
+    },
+    "Vegetarian": {
+        "id": 34,
+        "Type": "Passive",
+        "Description": "Fruit is healthy. The Coromon restores 20% HP when consuming Fruit.",
+        "Condition": null,
+        "Effect": null,
+        "Coromon": [
+            "Toruga"
+        ]
+    }
+}

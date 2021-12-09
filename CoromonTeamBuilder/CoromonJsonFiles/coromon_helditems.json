@@ -1,0 +1,62 @@
+{
+    "Duria Fruit": {
+        "Description": "Removes the burn immediately when getting burned.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Fik Fruit": {
+        "Description": "Removes the poison immediately when getting poisoned.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Cuco Fruit": {
+        "Description": "Removes the shock immediately when getting shocked.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Gao Fruit": {
+        "Description": "Wakes up immediately when falling asleep.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Sur Fruit": {
+        "Description": "Increases Skill Power when using an Electric attack.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Pomo Fruit": {
+        "Description": "Increases Skill Power when using a Normal attack.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Mull Fruit": {
+        "Description": "Restores to 75% SP when nearing exhaustion.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Juba Fruit": {
+        "Description": "Restores to 50% HP when in danger.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Canul Fruit": {
+        "Description": "Restores to 70% HP when in danger, at the risk of getting a status ailment.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Oki Fruit": {
+        "Description": "Increases the Attack of the Coromon when in danger.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Dally Fruit": {
+        "Description": "Increases the Sp. Attack of the Coromon when in danger.",
+        "Condition": null,
+        "Effect": null
+    },
+    "Dip Fruit": {
+        "Description": "Increases the Defense of the Coromon when in danger.",
+        "Condition": null,
+        "Effect": null
+    }
+}
