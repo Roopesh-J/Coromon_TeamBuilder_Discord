@@ -73,34 +73,34 @@ class TeamBuild(commands.Cog, name="Team Building"):
             else:
                 components_list = [
                     SelectMenu(
-                            custom_id='t',
-                            placeholder="Choose a trait",
                             options=[SelectOption(
                                 value=trait,
                                 label=trait,
                                 description=TRAITS[trait]['Description'][:100]) for trait in coromon['Traits']],
+                            custom_id='t',
+                            placeholder="Choose a trait",
                             max_values=1
                         ),
                     SelectMenu(
-                        custom_id='s',
-                        placeholder="Choose up to 4 skills",
                         options=[SelectOption(
                             value=skill,
                             label=f"{skill} ({SKILLS[skill]['Type']})",
                             description=SKILLS[skill]['Description'][:100]) for skill in coromon['Skills']],
+                        custom_id='s',
+                        placeholder="Choose up to 4 skills",
                         max_values=4
                     ),
                     SelectMenu(
-                        custom_id='i',
-                        placeholder="Choose an item (Optional)",
                         options=[SelectOption(
                             value=item,
                             label=f"{item}",
                             description=ITEMS[item]['Description'][:100]) for item in ITEMS.keys()],
+                        custom_id='i',
+                        placeholder="Choose an item (Optional)",
                         max_values=1
                     ),
-                    Button(custom_id = "c", label = f"Add Coromon", emoji='\U00002714', color=3, disabled=True),
-                    Button(custom_id = "x", label = f"Cancel Entry ", emoji='\U00002716', color=4)
+                    Button(label = f"Add Coromon", emoji='\U00002714', custom_id = "c", color=3),
+                    Button(label = f"Cancel Entry ", emoji='\U00002716', custom_id = "x", color=4)
                 ]
                 attr_option = await ctx.reply(f"Create a set for {mon_name} (will timeout after 30 secs of no activity):",components=components_list)
                 trait_sel = None
@@ -136,7 +136,7 @@ class TeamBuild(commands.Cog, name="Team Building"):
                             description=ITEMS[item]['Description'][:100]) for item in ITEMS.keys()],
                         max_values=1
                         ),
-                        Button(custom_id = "c", label = f"Add Coromon", emoji='\U00002714', color=3, disabled=True),
+                        Button(custom_id = "c", label = f"Add Coromon", emoji='\U00002714', color=3),
                         Button(custom_id = "x", label = f"Cancel Entry ", emoji='\U00002716', color=4)
                     ]
                     await self.bot.wait_until_ready()
@@ -169,21 +169,17 @@ class TeamBuild(commands.Cog, name="Team Building"):
                         case 'i':
                             item_sel = f_result.selected_values[0]
                         case 'c':
-                            Trainer.addMon(mon_name,trait_sel,skills_sel,item_sel)
-                            c2 = self.lock(components_list,trait_sel,skills_sel,item_sel)
-                            await attr_option.edit(f"{mon_name} was added!",components=c2[:3])
-                            break
+                            if all([trait_sel,skills_sel]):
+                                Trainer.addMon(mon_name,trait_sel,skills_sel,item_sel)
+                                await attr_option.edit(f"{mon_name} was added! Use `.summary {Trainer.team[-1].slot}` to view your mon",components=None)
+                                break
+                            else:
+                                await ctx.send("Make sure to select a trait and atleast one skill")
                         case 'x':
                             await attr_option.disable_components(True)
                             await attr_option.edit("Cancelled!")
                             break
                     
-                    if all([trait_sel, skills_sel, confirm_flag]):
-                        c1 = self.lock(components_list,trait_sel,skills_sel,item_sel)
-                        c1[3].disabled = False
-                        await attr_option.edit(components=c1)
-                        confirm_flag = False
-                        
     @commands.command()
     async def remove(self, ctx, slot:int=None):
         '''
@@ -209,7 +205,7 @@ class TeamBuild(commands.Cog, name="Team Building"):
             else:
                 msg = await ctx.send(
                     "Choose a coromon (or wait 10 secs to cancel): ", 
-                    components=[SelectMenu("custom_id", options=self.team_menu(Trainer.team), max_values=1)]
+                    components=[SelectMenu(options=self.team_menu(Trainer.team), max_values=1)]
                     )
                 try:
                     sel = await msg.wait_for("select", self.bot, by=author, timeout=10)
@@ -244,34 +240,34 @@ class TeamBuild(commands.Cog, name="Team Building"):
             else:
                 components_list = [
                     SelectMenu(
-                            custom_id='t',
-                            placeholder="Choose a trait",
                             options=[SelectOption(
                                 value=trait,
                                 label=trait,
                                 description=TRAITS[trait]['Description'][:100]) for trait in coromon['Traits']],
+                            custom_id='t',
+                            placeholder="Choose a trait",
                             max_values=1
                         ),
                     SelectMenu(
-                        custom_id='s',
-                        placeholder="Choose up to 4 skills",
                         options=[SelectOption(
                             value=skill,
                             label=f"{skill} ({SKILLS[skill]['Type']})",
                             description=SKILLS[skill]['Description'][:100]) for skill in coromon['Skills']],
+                        custom_id='s',
+                        placeholder="Choose up to 4 skills",
                         max_values=4
                     ),
                     SelectMenu(
-                        custom_id='i',
-                        placeholder="Choose an item (Optional)",
                         options=[SelectOption(
                             value=item,
                             label=f"{item}",
                             description=ITEMS[item]['Description'][:100]) for item in ITEMS.keys()],
+                        custom_id='i',
+                        placeholder="Choose an item (Optional)",
                         max_values=1
                     ),
-                    Button(custom_id="c",label=f"Edit Coromon",emoji='\U00002714',color=3),
-                    Button(custom_id="x",label=f"Cancel Edit\a",emoji='\U00002716',color=4)
+                    Button(label=f"Edit Coromon",custom_id="c",emoji='\U00002714',color=3),
+                    Button(label=f"Cancel Edit\a",custom_id="x",emoji='\U00002716',color=4)
                 ]
                 attr_option = await ctx.reply(
                     f"Edit {Mon.name}'s set (will timeout after 15 secs of no activity):",
@@ -283,34 +279,34 @@ class TeamBuild(commands.Cog, name="Team Building"):
                 while True:
                     components_list = [
                         SelectMenu(
-                                custom_id='t',
-                                placeholder="Choose a trait",
-                                options=[SelectOption(
-                                    value=trait,
-                                    label=trait,
-                                    description=TRAITS[trait]['Description'][:100]) for trait in coromon['Traits']],
-                                max_values=1
+                            options=[SelectOption(
+                                value=trait,
+                                label=trait,
+                                description=TRAITS[trait]['Description'][:100]) for trait in coromon['Traits']],
+                            custom_id='t',
+                            placeholder="Choose a trait",
+                            max_values=1
                         ),
                         SelectMenu(
-                            custom_id='s',
-                            placeholder="Choose up to 4 skills",
                             options=[SelectOption(
                                 value=skill,
                                 label=f"{skill} ({SKILLS[skill]['Type']})",
                                 description=SKILLS[skill]['Description'][:100]) for skill in coromon['Skills']],
+                            custom_id='s',
+                            placeholder="Choose up to 4 skills",
                             max_values=4
                         ),
                         SelectMenu(
-                        custom_id='i',
-                        placeholder="Choose an item (Optional)",
                         options=[SelectOption(
                             value=item,
                             label=f"{item}",
                             description=ITEMS[item]['Description'][:100]) for item in ITEMS.keys()],
+                        custom_id='i',
+                        placeholder="Choose an item (Optional)",
                         max_values=1
                         ),
-                        Button(custom_id="c",label=f"Edit Coromon",emoji='\U00002714',color=3),
-                        Button(custom_id="x",label=f"Cancel Edit\a",emoji='\U00002716',color=4)
+                        Button(label=f"Edit Coromon",custom_id="c",emoji='\U00002714',color=3),
+                        Button(label=f"Cancel Edit\a",custom_id="x",emoji='\U00002716',color=4)
                     ]
                     await self.bot.wait_until_ready()
                     try:
@@ -342,8 +338,7 @@ class TeamBuild(commands.Cog, name="Team Building"):
                             item_sel = f_result.selected_values[0]
                         case 'c':
                             Mon.edit(Trainer,trait=trait_sel,skills=skills_sel,item=item_sel)
-                            c2 = self.lock(components_list,trait_sel,skills_sel,item_sel)
-                            await attr_option.edit(f"{Mon.name}'s set was edited!",components=c2[:3])
+                            await attr_option.edit(f"{Mon.name}'s set was edited! Use `.summary {Mon.slot}` to view it",components=None)
                             break
                         case 'x':
                             await attr_option.disable_components(True)
@@ -400,15 +395,15 @@ class TeamBuild(commands.Cog, name="Team Building"):
                     embed=stats,
                     components=[
                         SelectMenu(
+                            options=[SelectOption(k,k) for k in Mon.stats.keys()],
                             custom_id='s',
                             placeholder='Stat:',
-                            options=[SelectOption(k,k) for k in Mon.stats.keys()],
                             max_values=1  
                         ),
                         SelectMenu(
+                            options=[SelectOption(str(i),str(i)) for i in range(0,61,6)],
                             custom_id='p',
                             placeholder='Points:',
-                            options=[SelectOption(str(i),str(i)) for i in range(0,61,6)],
                             max_values=1
                         )
                     ]
@@ -468,10 +463,10 @@ class TeamBuild(commands.Cog, name="Team Building"):
                     padd2 = '\u3000\u00A0' + '\u202F' * 4 # wack strats continued
                     embed = Mon.summary(Trainer)    
                     msg = await ctx.send(embed=embed,components=[
-                        [Button("-1",f"{padd2}⟵{padd2}",color=2),
-                        Button("1",f"{padd2}⟶{padd2}",color=2)],
-                        [Button('e',f'Edit{padd}Set{padd}',emoji='\U0001F4DD',color=1),
-                        Button('x','Remove'+'\u00A0'*3,emoji='\U00002716',color=4)]
+                        [Button(f"{padd2}⟵{padd2}","-1",color=2),
+                        Button(f"{padd2}⟶{padd2}","1",color=2)],
+                        [Button(f'Edit{padd}Set{padd}','e',emoji='\U0001F4DD',color=1),
+                        Button('Remove'+'\u00A0'*3,'x',emoji='\U00002716',color=4)]
                     ])
                     try:
                         btn = await msg.wait_for("button", self.bot, by=author, timeout=20)
@@ -491,7 +486,7 @@ class TeamBuild(commands.Cog, name="Team Building"):
                 try:
                     msg = await ctx.send(
                     "Choose a coromon (or wait 10 secs to cancel): ", 
-                    components=[SelectMenu("custom_id", options=self.team_menu(Trainer.team), max_values=1)]
+                    components=[SelectMenu(options=self.team_menu(Trainer.team), max_values=1)]
                     )
                     sel = await msg.wait_for("select", self.bot, by=author, timeout=10)
                 except asyncio.TimeoutError:
@@ -523,20 +518,6 @@ class TeamBuild(commands.Cog, name="Team Building"):
     
     def team_menu(self,team):
         return [SelectOption(coromon.slot,coromon.name,f'{coromon.trait}, {coromon.item}') for coromon in team]
-
-    def lock(self,temps,trait,skills,item):
-        for i, o in enumerate(temps[0].options):
-            if o.value == trait:
-                temps[0].set_default_option(i)
-                
-        for index in [i for i, o in enumerate(temps[1].options) if o.value in skills]:
-            temps[1].set_default_option(index)
-            
-        if item:
-                for i, o in enumerate(temps[2].options):
-                    if o.value == item:
-                        temps[2].set_default_option(i)
-        return temps
-
+    
 def setup(bot: commands.Bot):
     bot.add_cog(TeamBuild(bot))
